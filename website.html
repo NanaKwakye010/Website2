@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel ="stylesheet" href="websitecss.css">
+</head>
+<body>
+
+<header>
+    <div id="auth-area">
+        <button onclick="openModal('loginModal')" class="auth-btn">Login</button>
+        <button onclick="openModal('signupModal')" class="auth-btn">Sign Up</button>
+    </div>
+
+<div id="user-area" style="display:none;">
+    <span id="username-display"></span>
+    <button onclick="logout()" class="auth-btn">Logout</button>
+</div>
+
+    <div class="logo">ABIGAIL'S STORE</div>
+    <nav>
+        <ul>
+            <li><a href="#provisions">Provisions</a></li>
+            <li><a href="#fashion">Fashion</a></li>
+            <li><a href="#jewelry">Jewelry</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Quality You Can Trust</h1>
+    <p>From daily essentials to elegant accessories, we bring the best to your doorstep.</p>
+</section>
+
+<div class="container">
+    
+    <!-- Food & Provisions -->
+    <h2 id="provisions" class="section-title">Daily Provisions</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-img">OIL & OATS</div>
+            <div class="product-info">
+                <span class="category-tag">Grocery</span>
+                <h3>Premium Cooking Oil & Oats</h3>
+                <p>Nutritious and essential.</p>
+                <button class="btn-buy">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img">MILK & SARDINES</div>
+            <div class="product-info">
+                <span class="category-tag">Grocery</span>
+                <h3>Milk & Fresh Sardines</h3>
+                <p>Breakfast essentials.</p>
+                <button class="btn-buy">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img">TOMATO TIN</div>
+            <div class="product-info">
+                <span class="category-tag">Grocery</span>
+                <h3>Canned Tomato Paste</h3>
+                <p>Rich and flavorful.</p>
+                <button class="btn-buy">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fashion & Shoes -->
+    <h2 id="fashion" class="section-title">Footwear & Beauty</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-img">HEELS</div>
+            <div class="product-info">
+                <span class="category-tag">Fashion</span>
+                <h3>Ladies Elegant Heels</h3>
+                <p>Step out in style.</p>
+                <button class="btn-buy">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img">GIRLS SHOES</div>
+            <div class="product-info">
+                <span class="category-tag">Fashion</span>
+                <h3>Girls Fun Footwear</h3>
+                <p>Comfortable for play.</p>
+                <button class="btn-buy">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img">BODY SPRAY</div>
+            <div class="product-info">
+                <span class="category-tag">Beauty</span>
+                <h3>Fine Body Sprays</h3>
+                <p>Lasting fragrance.</p>
+                <button class="btn-buy">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jewelry -->
+    <h2 id="jewelry" class="section-title">Jewelry Collection</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-img">NECKLACE</div>
+            <div class="product-info">
+                <span class="category-tag">Jewelry</span>
+                <h3>Golden Necklaces</h3>
+                <p>Timeless beauty.</p>
+                <button class="btn-buy">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img">EARRINGS</div>
+            <div class="product-info">
+                <span class="category-tag">Jewelry</span>
+                <h3>Crystal Earrings</h3>
+                <p>Exquisitely crafted.</p>
+                <button class="btn-buy">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img">BRACELET</div>
+            <div class="product-info">
+                <span class="category-tag">Jewelry</span>
+                <h3>Charming Bracelets</h3>
+                <p>The perfect gift.</p>
+                <button class="btn-buy">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 ABIGAIL'S Online Boutique. All Rights Reserved.</p>
+    <p>Fast Delivery Across the Country</p>
+</footer>
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/+233241790202" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="30">
+    <span>Chat with ABIGAIL</span>
+</a>
+
+<style>
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 2000;
+}
+</style>
+    <script>
+document.querySelectorAll(".btn-buy").forEach(button => {
+    button.addEventListener("click", function() {
+        alert("Item added to cart! Contact us on WhatsApp to complete your order.");
+    });
+});
+    </script>
+    <!-- Login Modal -->
+<div class="modal" id="loginModal">
+  <div class="modal-content">
+    <h2>Login</h2>
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPassword" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <span onclick="closeModal('loginModal')" class="close">X</span>
+  </div>
+</div>
+
+<!-- Signup Modal -->
+<div class="modal" id="signupModal">
+  <div class="modal-content">
+    <h2>Create Account</h2>
+    <input type="text" id="signupName" placeholder="Full Name">
+    <input type="email" id="signupEmail" placeholder="Email">
+    <input type="password" id="signupPassword" placeholder="Password (min 6 chars)">
+    <button onclick="signup()">Sign Up</button>
+    <span onclick="closeModal('signupModal')" class="close">X</span>
+  </div>
+</div>
+    <script>
+function openModal(id){
+    document.getElementById(id).style.display = "flex";
+}
+
+function closeModal(id){
+    document.getElementById(id).style.display = "none";
+}
+
+function signup(){
+    const name = document.getElementById("signupName").value.trim();
+    const email = document.getElementById("signupEmail").value.trim();
+    const password = document.getElementById("signupPassword").value;
+
+    if(name === "" || email === "" || password.length < 6){
+        alert("Please fill all fields correctly (password min 6 chars)");
+        return;
+    }
+
+    const user = {name, email, password};
+    localStorage.setItem("user", JSON.stringify(user));
+    alert("Account created successfully!");
+    closeModal("signupModal");
+}
+
+function login(){
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value;
+
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+
+    if(!storedUser || storedUser.email !== email || storedUser.password !== password){
+        alert("Invalid credentials");
+        return;
+    }
+
+    localStorage.setItem("loggedIn", "true");
+    localStorage.setItem("currentUser", storedUser.name);
+    loadUser();
+    closeModal("loginModal");
+}
+
+function loadUser(){
+    if(localStorage.getItem("loggedIn") === "true"){
+        document.getElementById("auth-area").style.display = "none";
+        document.getElementById("user-area").style.display = "flex";
+        document.getElementById("username-display").innerText =
+            "Welcome, " + localStorage.getItem("currentUser");
+    }
+}
+
+function logout(){
+    localStorage.removeItem("loggedIn");
+    document.getElementById("auth-area").style.display = "flex";
+    document.getElementById("user-area").style.display = "none";
+}
+
+window.onload = loadUser;
+</script>
+
+</body>
+</html>
